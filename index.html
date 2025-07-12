@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navadarsi - Orbiting Logos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Transparent Navigation Bar -->
+    <nav class="transparent-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/navadarsi.jpg" alt="Navadarsi" class="nav-logo-img">
+                <span class="nav-logo-text">Navadarsi</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-stage">
+        <!-- Central Navadarsi logo -->
+        <div class="central-logo">
+            <img src="images/navadarsi.jpg" alt="Navadarsi" class="logo-image central">
+        </div>
+        
+        <!-- Tagline below central logo -->
+        <div class="tagline">
+            <div class="tagline-english">Navigating IT Success Across the Gulf.</div>
+            <div class="tagline-arabic">نُوجّه نجاح تكنولوجيا المعلومات في جميع أنحاء الخليج.</div>
+        </div>
+        
+        <!-- Orbiting logos container -->
+        <div class="orbit-container">
+            <!-- Oyifa logo - positioned at 0 degrees -->
+            <div class="orbiting-logo" data-angle="0">
+                <img src="images/oyifa.jpg" alt="Oyifa" class="logo-image orbiting">
+            </div>
+            
+            <!-- Arbab Jobs logo - positioned at 120 degrees -->
+            <div class="orbiting-logo" data-angle="120">
+                <img src="images/arbabjobs.jpg" alt="Arbab Jobs" class="logo-image orbiting">
+            </div>
+            
+            <!-- Monolithia GCC logo - positioned at 240 degrees -->
+            <div class="orbiting-logo" data-angle="240">
+                <img src="images/monolithia.jpg" alt="Monolithia GCC" class="logo-image orbiting">
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
